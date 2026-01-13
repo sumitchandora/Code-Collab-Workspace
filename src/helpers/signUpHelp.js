@@ -12,7 +12,7 @@ export const signUpUser = async (email, password, displayName) => {
             return { success: false, message: "User already exists. Please log in." };
         }
         // Generate verification code
-        const verifyCode = Math.floor(10000000 + Math.random() * 90000000).toString();
+        const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
         // Store verification code in Firestore (expires after 10 minutes)
         await setDoc(doc(db, "emailVerifications", email), {
             verifyCode,
