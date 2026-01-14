@@ -45,7 +45,7 @@ const Profile = () => {
         if (currentUser) {
             setUser(currentUser);
             setEmail(currentUser.email);
-            fetchInvites(currentUser.uid);
+            fetchInvites(currentUser.email);
         } else {
             router.push("/login"); // Redirect to login if not authenticated
         }
