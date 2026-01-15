@@ -80,8 +80,7 @@ const Dashboard = () => {
                         };
                     })
                 );
-
-                
+                setWorkspaces(workspaceData.filter(Boolean));
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching workspaces:", error);
