@@ -116,6 +116,10 @@ const Dashboard = () => {
             const cursorsRef = doc(db, `workspaces/${workspaceRef.id}`);
             await setDoc(cursorsRef, { cursors: {} }, { merge: true });
 
+            setWorkspaces([
+                ...workspaces,
+                { id: workspaceRef.id, name: workspaceName, isPublic, role: "owner" },
+            ]);
             
             toast.success("Workspace created successfully!", toastOptions);
             setIsOpen(false);
