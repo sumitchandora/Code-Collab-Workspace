@@ -88,7 +88,7 @@ const Dashboard = () => {
             }
         };
 
-        
+        fetchWorkspaces();
     }, [user]);
 
     const createWorkspace = async () => {
