@@ -29,12 +29,13 @@ const Workspace = () => {
             const workspaceSnap = await getDoc(workspaceRef);
 
             if (workspaceSnap.exists()) {
-                const workspaceData = workspaceSnap.data();
-                
 
+                const workspaceData = workspaceSnap.data();
+                setWorkspaceName(workspaceData.name);
                 const membersRef = collection(db, `workspaces/${workspaceId}/members`);
                 const membersSnap = await getDocs(membersRef);
                 setMembersCount(membersSnap.size);
+                
             } else {
                 console.error("Workspace not found");
             }
