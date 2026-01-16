@@ -17,6 +17,8 @@ export const loginWithEmailAndPassword = async (email, password) => {
 };
 
 // Function to log in with Google (with user existence check)
+
+//Enable Google signup/login in firebase under Authentication->Sign-in-method
 export const loginWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
