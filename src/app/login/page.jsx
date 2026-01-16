@@ -71,7 +71,22 @@ const Login = () => {
         }
     };
 
-    
+    const handlePasswordReset = async () => {
+        if (!email) return;
+        setIsLoading(true);
+ 
+        try {
+            await sendPasswordResetEmail(auth, email);
+ 
+            toast.success("Password reset link sent to your email!"); // Show success toast
+            setIsDialogOpen(false);
+        } catch (error) {
+ 
+            toast.error("Error sending password reset email "); // Show error toast
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-r from-gray-950 via-purple-950 to-gray-950 text-white">
